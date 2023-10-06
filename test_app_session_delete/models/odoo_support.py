@@ -10,6 +10,7 @@ _logger = logging.getLogger(__name__)
 
 class FilesystemSessionStoreFix(http.FilesystemSessionStore):
     def delete(self, session):
+        _logger.debug("debug message")
         err_flag = 0
         fn = self.get_session_filename(session.sid)
         try:
