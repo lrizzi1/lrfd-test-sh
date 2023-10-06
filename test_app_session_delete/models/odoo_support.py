@@ -20,4 +20,5 @@ class FilesystemSessionStoreFix(http.FilesystemSessionStore):
         if err_flag:
             _logger.debug('Error deleting session file %s', ''.join([line for line in traceback.format_stack()]))
 
+_logger.warning (" ============================================ FILE LOADED ======================================== thx syf")
 http.FilesystemSessionStore = FilesystemSessionStoreFix
