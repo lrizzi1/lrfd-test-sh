@@ -10,7 +10,7 @@ _logger = logging.getLogger(__name__)
 
 class FilesystemSessionStoreFix(http.FilesystemSessionStore):
     def delete(self, session):
-        _logger.debug("debug message")
+        _logger.debug("_______________________________________________debug message____________________________________________________________________")
         err_flag = 0
         fn = self.get_session_filename(session.sid)
         try:
@@ -21,4 +21,6 @@ class FilesystemSessionStoreFix(http.FilesystemSessionStore):
             _logger.debug('Error deleting session file %s', ''.join([line for line in traceback.format_stack()]))
 
 _logger.warning (" ============================================ FILE LOADED ======================================== thx syf")
+del (http.root)
 http.FilesystemSessionStore = FilesystemSessionStoreFix
+http.root = http.Application()
